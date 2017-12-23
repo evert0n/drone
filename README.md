@@ -1,3 +1,3 @@
 # Drone Backend Node
 
-Sample NodeJS backend
+Sample NodeJS backend.
