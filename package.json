@@ -1,0 +1,32 @@
+{
+  "name": "drone-backend-node",
+  "version": "1.0.0",
+  "description": "Drone Backend Node",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evert0n/drone-demo-app1.git"
+  },
+  "keywords": [
+    "drone.io",
+    "backend",
+    "node"
+  ],
+  "author": "Everton Yoshitani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/evert0n/drone-demo-app1/issues"
+  },
+  "homepage": "https://github.com/evert0n/drone-demo-app1#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "calculatorjs": "^0.1.7",
+    "debug": "^3.1.0",
+    "express": "^4.15.4",
+    "morgan": "^1.9.0"
+  }
+}
