@@ -1,0 +1,13 @@
+pipeline:
+  test:
+    image: node:${NODE_VERSION}
+    commands:
+      - npm install --quiet --silent
+      - npm test
+    environment:
+      - NODE_ENV=test
+matrix:
+  NODE_VERSION:
+    - 6-alpine
+    - alpine
+    - latest

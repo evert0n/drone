@@ -12,7 +12,7 @@ let app = express();
 app.server = http.createServer(app);
 
 // logger
-app.use(morgan('combined'));
+//app.use(morgan('combined'));
 
 // body parser
 app.use(bodyParser.json());
@@ -36,8 +36,10 @@ app.use((error, req, res, next) => {
 });
 
 // init server
-app.server.listen(config.app.port, () => {
-	debug(`Started on port ${app.server.address().port}`);
-});
+if (!module.parent) {
+	app.server.listen(config.app.port, () => {
+		debug(`Started on port ${app.server.address().port}`);
+	});
+}
 
 module.exports = app;

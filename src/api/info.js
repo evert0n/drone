@@ -7,7 +7,8 @@ module.exports = router;
 router.route('/').get((req, res) => {
 
   res.send({
-    name: pkg.description,
+    name: pkg.name,
+    description: pkg.description,
     build: pkg.version
   });
     
