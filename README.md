@@ -2,4 +2,4 @@
 
 Sample node backend
 
-ping CI 1
+ping CI 2
