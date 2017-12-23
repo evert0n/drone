@@ -6,6 +6,7 @@ pipeline:
       - npm test
     environment:
       - NODE_ENV=test
+      
 matrix:
   NODE_VERSION:
     - 6-alpine
