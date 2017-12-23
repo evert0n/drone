@@ -4,7 +4,7 @@ const pkg = require('../package');
 
 describe('/ endpoint', () => {
   
-  it('should return api info', () => {
+  it('should return API info', () => {
     
     let check = (results) => {
       expect(results.statusCode).to.equal(200);

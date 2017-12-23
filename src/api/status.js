@@ -8,7 +8,8 @@ module.exports = router;
 router.route('/').get((req, res) => {
 
   res.send({
-    name1: pkg.description,
+    name: pkg.name,
+    description: pkg.description,
     build: pkg.version,
     server: {
       hostname: os.hostname(),

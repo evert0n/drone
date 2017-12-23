@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/app.js",
     "test": "mocha --require test/support/chai.js --exit",
-    "test:watch": "mocha --require test/support/chai.js --watch"
+    "test:watch": "nodemon --exec mocha --require test/support/chai.js"
   },
   "repository": {
     "type": "git",
