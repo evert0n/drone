@@ -1,15 +1,16 @@
 pipeline:
 
   test:
-    image: node:${NODE_VERSION}
+    image: node:latest
     commands:
       - npm install --silent
       - npm test
     environment:
       - NODE_ENV=test
 
-  build-docker-image:
+  build:
     image: plugins/docker
+    secrets: [docker_username, docker_password]
     repo: evert0n/drone-backend-node
     tags:
       - latest
@@ -18,8 +19,7 @@ pipeline:
 
   notify:
     image: plugins/slack
-    secrets: [zenbot_webhook_url, slack_webhook]
-    webhook: ${ZENBOT_WEBHOOK_URL}
+    secrets: [slack_webhook]
     channel: zenbot
     when:
       status: [ success, failure ]
