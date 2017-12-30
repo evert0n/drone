@@ -1,4 +1,5 @@
 pipeline:
+
   test:
     image: node:${NODE_VERSION}
     commands:
@@ -6,7 +7,16 @@ pipeline:
       - npm test
     environment:
       - NODE_ENV=test
-  slack:
+
+  build-docker-image:
+    image: plugins/docker
+    repo: evert0n/drone-backend-node
+    tags:
+      - latest
+      - ${DRONE_COMMIT_BRANCH}
+    
+
+  notify:
     image: plugins/slack
     secrets: [zenbot_webhook_url, slack_webhook]
     webhook: ${ZENBOT_WEBHOOK_URL}
