@@ -6,7 +6,13 @@ pipeline:
       - npm test
     environment:
       - NODE_ENV=test
-      
+  slack:
+    image: plugins/slack
+    webhook: ${ZENBOT_WEBHOOK_URL}
+    channel: zenbot
+    when:
+      status: [ success, failure ]
+
 matrix:
   NODE_VERSION:
     - 6-alpine
