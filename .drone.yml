@@ -1,4 +1,5 @@
 pipeline:
+
   test:
     image: node:${NODE_VERSION}
     commands:
@@ -7,18 +8,26 @@ pipeline:
     environment:
       - NODE_ENV=test
 
-  build:
+  build-docker-image:
     image: plugins/docker
-    secrets: [docker_username, docker_password]
     repo: evert0n/drone-backend-node
     tags:
       - latest
       - ${DRONE_COMMIT_BRANCH}
+    
 
   notify:
     image: plugins/slack
-    secrets: [slack_webhook]
+    secrets: [zenbot_webhook_url, slack_webhook]
+    webhook: ${ZENBOT_WEBHOOK_URL}
     channel: zenbot
     when:
       status: [ success, failure ]
 
+matrix:
+  NODE_VERSION:
+    - 6-alpine
+    - 8-alpine
+    - 9-alpine
+    - alpine
+    - latest
