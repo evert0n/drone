@@ -19,7 +19,6 @@ pipeline:
   notify:
     image: plugins/slack
     secrets: [slack_webhook]
-    webhook: ${ZENBOT_WEBHOOK_URL}
     channel: zenbot
     when:
       status: [ success, failure ]
