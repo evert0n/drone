@@ -8,9 +8,8 @@ pipeline:
       - NODE_ENV=test
   slack:
     image: plugins/slack
-    environment:
-      - SLACK_WEBHOOK=${ZENBOT_WEBHOOK_URL}
-    #webhook: ${ZENBOT_WEBHOOK_URL}
+    secrets: [zenbot_webhook_url]
+    webhook: ${ZENBOT_WEBHOOK_URL}
     channel: zenbot
     when:
       status: [ success, failure ]
