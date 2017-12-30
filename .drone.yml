@@ -13,9 +13,8 @@ pipeline:
     secrets: [docker_username, docker_password]
     repo: evert0n/drone-backend-node
     tags:
-      - latest
       - ${DRONE_COMMIT_BRANCH}
-    
+      - latest    
 
   notify:
     image: plugins/slack
