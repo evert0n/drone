@@ -12,8 +12,6 @@ pipeline:
     image: plugins/docker
     secrets: [docker_username, docker_password]
     repo: evert0n/drone-backend-node
-    username: ${DOCKER_USERNAME}
-    password: ${DOCKER_PASSWORD}
     tags:
       - latest
       - ${DRONE_COMMIT_BRANCH}
