@@ -1,6 +1,6 @@
 pipeline:
 
- test:
+  test:
     image: node:${NODE_VERSION}
     commands:
       - npm install --silent
