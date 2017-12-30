@@ -1,5 +1,6 @@
 pipeline:
-  test:
+
+ test:
     image: node:${NODE_VERSION}
     commands:
       - npm install --silent
@@ -7,7 +8,7 @@ pipeline:
     environment:
       - NODE_ENV=test
 
-  build-docker-image:
+  build:
     image: plugins/docker
     secrets: [docker_username, docker_password]
     repo: evert0n/drone-backend-node
@@ -25,10 +26,3 @@ pipeline:
     when:
       status: [ success, failure ]
 
-#matrix:
-#  NODE_VERSION:
-#    - 6-alpine
-#    - 8-alpine
-#    - 9-alpine
-#    - alpine
-#    - latest
