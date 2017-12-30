@@ -1,5 +1,4 @@
 pipeline:
-
   test:
     image: node:${NODE_VERSION}
     commands:
