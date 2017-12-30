@@ -18,7 +18,7 @@ pipeline:
 
   notify:
     image: plugins/slack
-    #secrets: [slack_webhook]
+    secrets: [slack_webhook]
     webhook: "${SLACK_WEBHOOK}"
     channel: zenbot
     when:
