@@ -24,10 +24,3 @@ pipeline:
     when:
       status: [ success, failure ]
 
-matrix:
-  NODE_VERSION:
-    - 6-alpine
-    - 8-alpine
-    - 9-alpine
-    - alpine
-    - latest
