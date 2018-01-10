@@ -2,5 +2,3 @@
 
 Sample NodeJS backend.
 
-
-Test25
