@@ -1,5 +1,10 @@
 pipeline:
 
+  nslookup:
+    image: donch/net-tools
+    commands:
+      - dig registry.appsrv.com
+      
   test:
     image: node:8-alpine
     commands:
