@@ -11,16 +11,16 @@ pipeline:
   build:
     image: plugins/docker
     secrets: [docker_username, docker_password]
-    repo: evert0n/drone-backend-node
+    repo: registry.appsrv.com/tests/drone-backend-node
     tags:
       - ${DRONE_COMMIT_BRANCH}
       - latest    
 
-  notify:
-    image: plugins/slack
-    secrets: [slack_webhook]
-    webhook: "${SLACK_WEBHOOK}"
-    channel: zenbot
-    when:
-      status: [ success, failure ]
+  # notify:
+  #   image: plugins/slack
+  #   secrets: [slack_webhook]
+  #   webhook: "${SLACK_WEBHOOK}"
+  #   channel: zenbot
+  #   when:
+  #     status: [ success, failure ]
 
