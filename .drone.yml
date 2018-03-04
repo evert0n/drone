@@ -10,7 +10,7 @@ pipeline:
 
   build:
     image: plugins/docker
-    secrets: [docker_username, docker_password]
+    #secrets: [docker_username, docker_password]
     repo: registry.appsrv.com/tests/drone-backend-node
     tags:
       - ${DRONE_COMMIT_BRANCH}
