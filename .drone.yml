@@ -23,7 +23,7 @@ pipeline:
       - ${DRONE_COMMIT_BRANCH}
       - latest    
 
-  # notify:
+  # notify: 123
   #   image: plugins/slack
   #   secrets: [slack_webhook]
   #   webhook: "${SLACK_WEBHOOK}"
