@@ -27,7 +27,7 @@
     "body-parser": "^1.18.2",
     "calculatorjs": "^0.1.7",
     "debug": "^3.1.0",
-    "express": "^4.15.4",
+    "express": "^4.17.3",
     "morgan": "^1.9.0"
   },
   "devDependencies": {
